@@ -22,9 +22,6 @@ function renderLicenseBadge(license) {
   } return licenseBadge;
 };
 
-renderLicenseBadge('MIT');
-console.log(renderLicenseBadge('MIT'));
-
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
@@ -56,16 +53,16 @@ function renderLicenseSection(license) {
 
   switch (license) {
     case 'MIT':
-      licenseSection = `[![License: MIT](${renderLicenseBadge(license)})]${renderLicenseLink(license)})`;
+      licenseSection = `[![License: MIT](${renderLicenseBadge(license)})](${renderLicenseLink(license)})`;
       break;
     case 'APACHE 2.0':
-      licenseSection = `[![License: APACHE 2.0](${renderLicenseBadge(license)})]${renderLicenseLink(license)})`;
+      licenseSection = `[![License: APACHE 2.0](${renderLicenseBadge(license)})](${renderLicenseLink(license)})`;
       break;
     case 'GPL 3.0':
-      licenseSection = `[![License: GPL 3.0](${renderLicenseBadge(license)})]${renderLicenseLink(license)})`;
+      licenseSection = `[![License: GPL 3.0](${renderLicenseBadge(license)})](${renderLicenseLink(license)})`;
       break;
     case 'BSD 3':
-      licenseSection = `[![License: BSD 3](${renderLicenseBadge(license)})]${renderLicenseLink(license)})`;
+      licenseSection = `[![License: BSD 3](${renderLicenseBadge(license)})](${renderLicenseLink(license)})`;
       break;
     case 'None':
       licenseSection = "";
@@ -84,7 +81,7 @@ function generateMarkdown(data) {
 
   ## Table of Contents
 
-  * [Installation] (#installation)
+  * [Installation](#installation)
 
   * [Usage](#usage)
 
@@ -126,8 +123,8 @@ function generateMarkdown(data) {
 
   ## Questions
 
-  If you have any questions about the repo, open an issue or contact me directly at ${data.email}. You can find more of my work at [${data.username}](https://github.com/${data.username}/).
+  If you have any questions about the repo, open an issue or contact me directly at ${data.email}. You can find more of my work at [https://github.com/${data.username}/](https://github.com/${data.username}/).
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = {generateMarkdown};
