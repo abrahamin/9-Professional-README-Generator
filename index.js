@@ -57,9 +57,9 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+function writeToFile() {
     const writeFileAsync = util.promisify(fs.writeFile);
-    
+
     inquirer.prompt(questions)
         .then((data) => writeFileAsync('README.md', genMark.generateMarkdown(data)))
         .then(() => console.log('Generating README...'))
